@@ -2,22 +2,26 @@ import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import styles from './StyleWelcome';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Image
         style={{width: '100%', height: 300}}
-        source={require('../../assets/images/logo_login.png')}
+        source={require('../../assets/images/login.png')}
       />
       <Text style={styles.titleWelcome}>Survey Online</Text>
       <Text style={styles.titleDetail}>Welcome to Login App Survey Online</Text>
 
       {/* button login and sign in */}
       <View style={styles.stylesDetail}>
-        <TouchableOpacity style={styles.login}>
+        <TouchableOpacity
+          style={styles.login}
+          onPress={() => navigation.navigate('Login')}>
           <Text style={styles.textLogin}>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.signIn}>
+        <TouchableOpacity
+          style={styles.signIn}
+          onPress={() => navigation.navigate('Register')}>
           <Text style={styles.textSignIn}>Sign Up</Text>
         </TouchableOpacity>
       </View>
