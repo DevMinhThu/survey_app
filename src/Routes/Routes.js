@@ -7,6 +7,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import WelcomeScreen from '../pages/Welcome/WelcomeScreen';
 import LoginScreen from '../pages/Login/LoginScreen';
 import RegisterScreen from '../pages/Register/RegisterScreen';
+import SurveyScreen from '../pages/Survey/SurveyScreen';
+import HomeSurvey from "../pages/Home/HomeSurvey";
 
 // custom hidden header of Stack
 const navOptionHandler = () => ({
@@ -32,6 +34,11 @@ export default function Routes() {
           <Stack.Screen
             name="Register"
             component={RegisterScreen}
+            options={navOptionHandler}
+          />
+          <Stack.Screen
+            name="Home"
+            component={HomeSurvey}
             options={navOptionHandler}
           />
         </Stack.Navigator>
