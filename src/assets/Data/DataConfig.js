@@ -1,38 +1,50 @@
 const questions = [
   {
-    questionText: 'Loại động vật khác với những con còn lại?',
+    questionText: 'Khi có sự xung đột giữa hai thành viên trong đội, bạn sẽ?',
     answerOptions: [
-      {answerText: 'Trâu', isCorrect: false},
-      {answerText: 'Bò', isCorrect: false},
-      {answerText: 'Rắn', isCorrect: true},
-      {answerText: 'Gà', isCorrect: false},
+      {
+        answerText: 'Ngay lập tức giải quyết, buộc hai bên phải dừng lại ngay',
+        isCorrect: false,
+      },
+      {
+        answerText:
+          'Mềm mỏng, lắng nghe và khuyên bảo từng người, giữ hoà khí trong đội',
+        isCorrect: false,
+      },
+      {
+        answerText:
+          'Lắng nghe, quan sát và tìm ra nguyên nhân và giải pháp xung đột.',
+        isCorrect: true,
+      },
     ],
   },
   {
-    questionText: 'Quần rộng nhất là quần gì?',
+    questionText: 'Chọn 1 trong những tiêu chí sau để đánh giá 1 team mạnh.',
     answerOptions: [
-      {answerText: 'Quần chúng', isCorrect: false},
-      {answerText: 'Quần đảo', isCorrect: true},
-      {answerText: 'Quần Jean', isCorrect: false},
-      {answerText: 'Quần đùi', isCorrect: false},
+      {
+        answerText: 'Hiệu quả công việc là tiêu trí quan trọng nhất',
+        isCorrect: false,
+      },
+      {
+        answerText: 'Có sự tin tưởng và gắn kết vững chắc làm nền tảng cho CV',
+        isCorrect: true,
+      },
+      {answerText: 'Nhiều người giỏi', isCorrect: false},
+      {answerText: 'Có thành viên gánh team', isCorrect: false},
     ],
   },
   {
-    questionText: 'Con đường nào dài nhất?',
+    questionText:
+      'Trong khi làm việc nhóm, bạn có nên giúp đỡ thành viên trong team không hay chỉ tập trung làm phần việc của mình?',
     answerOptions: [
-      {answerText: 'Đường đời', isCorrect: true},
-      {answerText: 'Đường nhựa', isCorrect: false},
-      {answerText: 'Đường đất', isCorrect: false},
-      {answerText: 'Đường bê tông', isCorrect: false},
-    ],
-  },
-  {
-    questionText: 'Bệnh gì mà bác sỹ bó tay?',
-    answerOptions: [
-      {answerText: 'Ung Thư', isCorrect: false},
-      {answerText: 'Covid-19', isCorrect: false},
-      {answerText: 'Đau đầu', isCorrect: false},
-      {answerText: 'Gãy tay', isCorrect: true},
+      {
+        answerText: 'Có nên giúp đỡ',
+        isCorrect: true,
+      },
+      {
+        answerText: 'Không nên giúp đỡ',
+        isCorrect: false,
+      },
     ],
   },
 ];

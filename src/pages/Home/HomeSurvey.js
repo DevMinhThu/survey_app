@@ -14,7 +14,7 @@ import {CustomHeader} from '../../components/Header/CustomHeader';
 import styles from './StyleHome';
 import {recommended, otherSurvey} from '../../assets/Data/DataHome';
 
-export default function home() {
+export default function home({navigation}) {
   // recommend and survey item
   const renderRecommended = () => {
     return (
@@ -49,12 +49,12 @@ export default function home() {
             <View style={styles.evaluate}>
               <View style={{flexDirection: 'row'}}>
                 <TouchableOpacity>
-                  <Feather name="heart" size={20} />
+                  <Feather name="heart" size={20} color="red" />
                 </TouchableOpacity>
                 <Text style={styles.rate}>{item.rate}</Text>
               </View>
               <TouchableOpacity>
-                <Feather name="plus-circle" size={20} />
+                <Feather name="plus-circle" size={20} color="blue" />
               </TouchableOpacity>
             </View>
           </View>
@@ -83,7 +83,11 @@ export default function home() {
 
   const renderOtherSurveyItem = (item) => {
     return (
-      <TouchableOpacity style={styles.container_OtherSurvey}>
+      <TouchableOpacity
+        style={styles.container_OtherSurvey}
+        onPress={() => {
+          navigation.navigate('SurveyScreen');
+        }}>
         <ImageBackground
           style={styles.ImgOtherSurvey}
           imageStyle={{borderRadius: 24}}

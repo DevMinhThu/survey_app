@@ -22,7 +22,7 @@ export default function LoginScreen({navigation}) {
               onPress: () => console.log('Cancel Pressed'),
               style: 'cancel',
             },
-            {text: 'OK', onPress: () => navigation.navigate('Home')},
+            {text: 'OK', onPress: () => navigation.navigate('HomeStack')},
           ],
           {cancelable: false},
         );

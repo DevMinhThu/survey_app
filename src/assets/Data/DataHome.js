@@ -38,14 +38,14 @@ const otherSurvey = [
     ImgBackground: IMAGE.IMG6,
     numberSurvey: 'x1',
     contentSurvey: 'Working group',
-    costSurvey: '$65.00',
+    costSurvey: '$5.00',
   },
   {
     id: 2,
     ImgBackground: IMAGE.IMG7,
     numberSurvey: 'x2',
     contentSurvey: 'Social media',
-    costSurvey: '$25.00',
+    costSurvey: '$10.20',
   },
   {
     id: 3,

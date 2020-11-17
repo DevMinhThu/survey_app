@@ -30,7 +30,7 @@ const QuizApp = () => {
         {showScore ? (
           <View style={styles.scoreSection}>
             <Text style={styles.textQuestion}>
-              Bạn trả lời đúng {score} trên {questions.length} câu.
+              Thank you for completing the survey!
             </Text>
           </View>
         ) : (
@@ -78,36 +78,37 @@ const styles = StyleSheet.create({
   },
 
   quizApp: {
-    backgroundColor: '#2980b9',
+    backgroundColor: '#ecf0f1',
     width: 350,
     borderRadius: 15,
     padding: 20,
   },
 
   textQuestion: {
-    color: '#fff',
+    color: 'black',
     fontSize: 20,
     marginBottom: 10,
+    fontWeight: 'bold',
   },
 
   buttonAns: {
-    backgroundColor: '#3498db',
+    backgroundColor: '#ecf0f1',
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
     padding: 10,
     borderRadius: 15,
-    borderWidth: 3,
-    borderColor: '#dfe6e9',
+    borderWidth: 2,
+    borderColor: '#bdc3c7',
   },
 
   textAnswer: {
-    color: '#fff',
+    color: 'black',
     fontSize: 18,
   },
 
   scoreSection: {
-    backgroundColor: '#2d3436',
+    backgroundColor: '#ecf0f1',
     borderRadius: 15,
     padding: 20,
   },
