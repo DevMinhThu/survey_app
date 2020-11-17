@@ -5,8 +5,8 @@ import styles from './StyleLogin';
 import {firebaseApp} from '../../constants/FirebaseConfig';
 
 export default function LoginScreen({navigation}) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('surveyonline@gmail.com');
+  const [password, setPassword] = useState('123456');
 
   const handleLogin = () => {
     firebaseApp
@@ -22,7 +22,7 @@ export default function LoginScreen({navigation}) {
               onPress: () => console.log('Cancel Pressed'),
               style: 'cancel',
             },
-            {text: 'OK', onPress: () => navigation.navigate('Welcome')},
+            {text: 'OK', onPress: () => navigation.navigate('HomeStack')},
           ],
           {cancelable: false},
         );

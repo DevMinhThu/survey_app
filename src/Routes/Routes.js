@@ -1,0 +1,74 @@
+import * as React from 'react';
+import {StyleSheet, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+// screen
+import WelcomeScreen from '../pages/Welcome/WelcomeScreen';
+import LoginScreen from '../pages/Login/LoginScreen';
+import RegisterScreen from '../pages/Register/RegisterScreen';
+import SurveyScreen from '../pages/Survey/SurveyScreen';
+import HomeSurvey from '../pages/Home/HomeSurvey';
+
+// custom hidden header of Stack
+const navOptionHandler = () => ({
+  headerShown: false,
+});
+
+const StackHome = createStackNavigator();
+
+// Stack of Home
+function HomeStack() {
+  return (
+    <StackHome.Navigator initialRouteName="Home">
+      <StackHome.Screen
+        name="Home"
+        component={HomeSurvey}
+        options={navOptionHandler}
+      />
+      <StackHome.Screen
+        name="SurveyScreen"
+        component={SurveyScreen}
+        options={{
+          headerTitle: 'Survey',
+        }}
+      />
+    </StackHome.Navigator>
+  );
+}
+
+// Router Main
+const Stack = createStackNavigator();
+
+export default function Routes() {
+  return (
+    <View style={styles.container}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Welcome"
+            component={WelcomeScreen}
+            options={navOptionHandler}
+          />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen
+            name="Register"
+            component={RegisterScreen}
+            options={navOptionHandler}
+          />
+          <Stack.Screen
+            name="HomeStack"
+            component={HomeStack}
+            options={navOptionHandler}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
