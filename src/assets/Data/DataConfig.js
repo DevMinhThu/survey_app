@@ -1,6 +1,7 @@
 const questions = [
   {
-    questionText: 'Khi có sự xung đột giữa hai thành viên trong đội, bạn sẽ?',
+    questionText:
+      '<h1>Khi có sự xung đột <i>giữa</i> hai thành viên trong đội, bạn sẽ?</h1>',
     answerOptions: [
       {
         answerText: 'Ngay lập tức giải quyết, buộc hai bên phải dừng lại ngay',

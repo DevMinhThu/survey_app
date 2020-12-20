@@ -2,6 +2,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 // screen
 import WelcomeScreen from '../pages/Welcome/WelcomeScreen';
@@ -9,6 +10,7 @@ import LoginScreen from '../pages/Login/LoginScreen';
 import RegisterScreen from '../pages/Register/RegisterScreen';
 import SurveyScreen from '../pages/Survey/SurveyScreen';
 import HomeSurvey from '../pages/Home/HomeSurvey';
+import CustomDrawerContent from '../components/DrawerContent/Drawer';
 
 // custom hidden header of Stack
 const navOptionHandler = () => ({
@@ -37,6 +39,21 @@ function HomeStack() {
   );
 }
 
+// Drawer
+const Drawer = createDrawerNavigator();
+
+//Handle Drawer
+function DrawerNavigator({navigation}) {
+  return (
+    <Drawer.Navigator
+      initialRouteName="Home"
+      drawerContent={() => <CustomDrawerContent navigation={navigation} />}>
+      <Drawer.Screen name="Home" component={HomeStack} />
+      <Drawer.Screen name="SurveyScreen" component={SurveyScreen} />
+    </Drawer.Navigator>
+  );
+}
+
 // Router Main
 const Stack = createStackNavigator();
 
@@ -58,7 +75,7 @@ export default function Routes() {
           />
           <Stack.Screen
             name="HomeStack"
-            component={HomeStack}
+            component={DrawerNavigator}
             options={navOptionHandler}
           />
         </Stack.Navigator>

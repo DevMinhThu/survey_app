@@ -13,26 +13,14 @@ export default function LoginScreen({navigation}) {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        Alert.alert(
-          'Alert',
-          'Login successfully ' + email,
-          [
-            {
-              text: 'Cancel',
-              onPress: () => console.log('Cancel Pressed'),
-              style: 'cancel',
-            },
-            {text: 'OK', onPress: () => navigation.navigate('HomeStack')},
-          ],
-          {cancelable: false},
-        );
-        setEmail(''); // Update lại Email thành null sau khi Login
-        setPassword(''); // Update lại Password thành null sau khi Login
+        navigation.navigate('HomeStack');
+        setEmail('');
+        setPassword('');
       })
       .catch(function (error) {
         Alert.alert(
-          'Alert',
-          'Wrong password!!!',
+          'Warning',
+          'Wrong account or password!',
           [
             {
               text: 'Cancel',

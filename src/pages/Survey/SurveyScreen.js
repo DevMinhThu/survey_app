@@ -1,15 +1,24 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  // Dimensions,
+} from 'react-native';
 import questions from '../../assets/Data/DataConfig';
+import {WebView} from 'react-native-webview';
 
-const QuizApp = () => {
+// const windowWidth = Dimensions.get('window').width;
+
+const Survey = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
 
   const handleAnswerButtonClick = (isCorrect) => {
     // Update score for App
-    if (isCorrect == true) {
+    if (isCorrect === true) {
       setScore(score + 1);
     }
 
@@ -23,10 +32,16 @@ const QuizApp = () => {
       setShowScore(true);
     }
   };
+  console.log(questions[currentQuestion].questionText);
+
+  const runFirst = `
+      document.body.style.backgroundColor = '#ecf0f1';
+      document.body.style.fontSize = 30;
+    `;
 
   return (
     <View style={styles.container}>
-      <View style={styles.quizApp}>
+      <View style={styles.Survey}>
         {showScore ? (
           <View style={styles.scoreSection}>
             <Text style={styles.textQuestion}>
@@ -38,13 +53,19 @@ const QuizApp = () => {
             <View style={styles.questionSection}>
               <View style={styles.questionCount}>
                 <Text style={styles.textQuestion}>
-                  Câu hỏi {currentQuestion + 1} / {questions.length}
+                  {currentQuestion + 1} / {questions.length}
                 </Text>
               </View>
               <View style={styles.questionText}>
-                <Text style={styles.textQuestion}>
+                {/* text -> webview */}
+                <WebView
+                  originWhitelist={['*']}
+                  source={{html: questions[currentQuestion].questionText}}
+                  injectedJavaScript={runFirst}
+                />
+                {/* <Text style={styles.textQuestion}>
                   {questions[currentQuestion].questionText}
-                </Text>
+                </Text> */}
               </View>
             </View>
             <View style={styles.answerSection}>
@@ -67,7 +88,7 @@ const QuizApp = () => {
   );
 };
 
-export default QuizApp;
+export default Survey;
 
 const styles = StyleSheet.create({
   container: {
@@ -75,20 +96,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     alignItems: 'center',
     justifyContent: 'center',
+    // backgroundColor: 'yellow',
   },
 
-  quizApp: {
+  Survey: {
     backgroundColor: '#ecf0f1',
-    width: 350,
-    borderRadius: 15,
-    padding: 20,
+    flex: 1,
+    // width: 350,
+    // borderRadius: 15,
+    padding: 30,
+    // backgroundColor: 'green',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   textQuestion: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 25,
     marginBottom: 10,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
 
   buttonAns: {
@@ -111,5 +138,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     borderRadius: 15,
     padding: 20,
+  },
+
+  questionText: {
+    width: 360,
+    height: 60,
+    backgroundColor: '#ecf0f1',
+    marginBottom: 20,
+    marginTop: 10,
   },
 });

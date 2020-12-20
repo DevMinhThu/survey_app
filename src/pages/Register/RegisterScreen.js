@@ -1,8 +1,19 @@
 import React, {useState} from 'react';
-import {Text, View, TextInput, Alert, Image, ScrollView} from 'react-native';
+import {
+  Text,
+  View,
+  TextInput,
+  Alert,
+  Image,
+  ScrollView,
+  Dimensions,
+} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import styles from './StyleRegister';
 import {firebaseApp} from '../../constants/FirebaseConfig';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export default function Register({navigation}) {
   const [email, setEmail] = useState('');
@@ -49,15 +60,11 @@ export default function Register({navigation}) {
   return (
     <ScrollView style={styles.container}>
       <Image
-        style={{width: '100%', height: 300}}
+        style={{width: windowWidth, height: windowHeight / 3.5}}
         source={require('../../assets/images/register.png')}
       />
-      <Text style={{fontSize: 25, marginTop: 20, fontWeight: 'bold'}}>
-        Register Now!
-      </Text>
-      <Text style={{fontSize: 16, marginTop: 20, color: 'gray'}}>
-        Enter information here.
-      </Text>
+      <Text style={styles.styleTitle}>Register Now!</Text>
+      <Text style={styles.subTitle}>Enter information here.</Text>
 
       {/* Input username and password */}
       <TextInput
@@ -83,9 +90,7 @@ export default function Register({navigation}) {
         <View style={styles.createAcc}>
           <Text style={{color: 'gray'}}>Already have an account </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-            <Text style={{fontWeight: 'bold', color: '#0d47a1'}}>
-              Login here
-            </Text>
+            <Text style={styles.loginHere}>Login here</Text>
           </TouchableOpacity>
         </View>
       </View>

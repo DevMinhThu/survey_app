@@ -21,6 +21,18 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
 
+  styleTitle: {
+    fontSize: 25,
+    marginTop: 20,
+    fontWeight: 'bold',
+  },
+
+  subTitle: {
+    fontSize: 16,
+    marginTop: 20,
+    color: 'gray',
+  },
+
   styleButton: {
     width: 200,
     backgroundColor: '#0d47a1',
@@ -34,6 +46,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
   },
+
+  loginHere: {fontWeight: 'bold', color: '#0d47a1'},
 
   createAcc: {
     flexDirection: 'row',

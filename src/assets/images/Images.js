@@ -1,5 +1,5 @@
 const IMAGE = {
-  AVATAR_USER: require('./profile.jpg'),
+  AVATAR_USER: require('./user.png'),
   IMG1: require('./img1.jpg'),
   IMG2: require('./img2.png'),
   IMG3: require('./img3.png'),

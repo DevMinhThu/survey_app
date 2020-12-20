@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
   TextInput,
@@ -107,7 +107,7 @@ export default function home({navigation}) {
 
   return (
     <View style={styles.container}>
-      <CustomHeader />
+      <CustomHeader navigation={navigation} />
       <ScrollView>
         <View style={styles.containerInput}>
           <Feather name="search" size={20} style={styles.iconSearch} />
