@@ -7,6 +7,7 @@ import {
   ScrollView,
   ImageBackground,
   FlatList,
+  SafeAreaView,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 
@@ -27,7 +28,7 @@ export default function home({navigation}) {
           scrollEventThrottle={16}
           snapToAlignment="center"
           data={recommended}
-          keyExtractor={(item, index) => `${item.id}`}
+          keyExtractor={(item) => `${item.id}`}
           renderItem={({item}) => renderSurveyItem(item)}
         />
       </View>
@@ -54,7 +55,7 @@ export default function home({navigation}) {
                 <Text style={styles.rate}>{item.rate}</Text>
               </View>
               <TouchableOpacity>
-                <Feather name="plus-circle" size={20} color="blue" />
+                <Feather name="plus-circle" size={20} color="gray" />
               </TouchableOpacity>
             </View>
           </View>
@@ -74,7 +75,7 @@ export default function home({navigation}) {
           scrollEventThrottle={16}
           snapToAlignment="center"
           data={otherSurvey}
-          keyExtractor={(item, index) => `${item.id}`}
+          keyExtractor={(item) => `${item.id}`}
           renderItem={({item}) => renderOtherSurveyItem(item)}
         />
       </View>
@@ -106,21 +107,23 @@ export default function home({navigation}) {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <CustomHeader navigation={navigation} />
-      <ScrollView>
-        <View style={styles.containerInput}>
-          <Feather name="search" size={20} style={styles.iconSearch} />
-          <TextInput
-            style={styles.searchInput}
-            placeholder={'Search survey'}
-            placeholderTextColor={'#b8adb5'}
-          />
-          <TouchableOpacity style={styles.buttonIcon}>
-            <Feather name="sliders" size={20} style={styles.iconSetting} />
-          </TouchableOpacity>
-        </View>
-
+      {/* search */}
+      <View style={styles.containerInput}>
+        <Feather name="search" size={20} style={styles.iconSearch} />
+        <TextInput
+          style={styles.searchInput}
+          placeholder={'Search survey'}
+          placeholderTextColor={'#b8adb5'}
+        />
+        <TouchableOpacity style={styles.buttonIcon}>
+          <Feather name="sliders" size={20} style={styles.iconSetting} />
+        </TouchableOpacity>
+      </View>
+      <ScrollView
+        style={styles.styleScrollView}
+        showsVerticalScrollIndicator={false}>
         {/* Main */}
         <View style={styles.containerMain}>
           <View style={styles.titleStyle}>
@@ -136,6 +139,6 @@ export default function home({navigation}) {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }

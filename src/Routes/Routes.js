@@ -11,6 +11,7 @@ import RegisterScreen from '../pages/Register/RegisterScreen';
 import SurveyScreen from '../pages/Survey/SurveyScreen';
 import HomeSurvey from '../pages/Home/HomeSurvey';
 import CustomDrawerContent from '../components/DrawerContent/Drawer';
+import Profile from '../pages/Profile/Profile';
 
 // custom hidden header of Stack
 const navOptionHandler = () => ({
@@ -33,6 +34,13 @@ function HomeStack() {
         component={SurveyScreen}
         options={{
           headerTitle: 'Survey',
+        }}
+      />
+      <StackHome.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          headerTitle: 'Profile',
         }}
       />
     </StackHome.Navigator>

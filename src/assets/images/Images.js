@@ -8,6 +8,9 @@ const IMAGE = {
   IMG6: require('./workplace.png'),
   IMG7: require('./logo_login.png'),
   IMG8: require('./register.png'),
+  EDUCATION: require('./education.jpg'),
+  SOCIAL: require('./social.jpg'),
+  WORK: require('./work.jpg'),
 };
 
 export {IMAGE};

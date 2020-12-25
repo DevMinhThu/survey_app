@@ -39,7 +39,7 @@ export default class CustomDrawerContent extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.styleButton}
-            onPress={() => this.props.navigation.navigate('SurveyScreen')}>
+            onPress={() => this.props.navigation.navigate('Profile')}>
             <Feather name="user" size={25} style={styles.styleIcon} />
             <Text style={styles.textStyle}>Profile</Text>
           </TouchableOpacity>
@@ -53,7 +53,7 @@ export default class CustomDrawerContent extends Component {
 
         <TouchableOpacity
           style={styles.buttonLogOut}
-          onPress={() => this.props.navigation.navigate('Login')}>
+          onPress={() => this.props.navigation.navigate('Welcome')}>
           <Feather name="log-in" size={25} style={styles.styleIcon} />
           <Text style={styles.textStyle}>Sign Out</Text>
         </TouchableOpacity>
@@ -71,13 +71,12 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'yellow',
   },
 
   imageUser: {
     height: 160,
     width: 160,
-    borderRadius: 60,
+    borderRadius: 100,
   },
 
   styleScrollView: {
