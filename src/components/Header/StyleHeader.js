@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     height: '28%',
-    borderBottomRightRadius: 30,
-    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 25,
+    borderBottomLeftRadius: 25,
     backgroundColor: '#1c2732',
     // backgroundColor: '#00a46c',
   },
@@ -54,6 +54,10 @@ const styles = StyleSheet.create({
   styleIcon: {
     marginLeft: 30,
     color: '#fff',
+    backgroundColor: 'rgba(221,221,221,0.2)',
+    paddingHorizontal: 6,
+    paddingVertical: 5,
+    borderRadius: 10,
   },
 
   titleHeader: {
@@ -63,6 +67,11 @@ const styles = StyleSheet.create({
 
   iconBell: {
     marginRight: 30,
+    color: '#fff',
+    backgroundColor: 'rgba(221,221,221,0.2)',
+    paddingHorizontal: 6,
+    paddingVertical: 5,
+    borderRadius: 10,
   },
 });
 

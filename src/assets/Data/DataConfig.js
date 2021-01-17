@@ -2,6 +2,7 @@ const questions = [
   {
     questionText:
       '<h1>Khi có sự xung đột <i>giữa</i> hai thành viên trong đội, bạn sẽ?</h1>',
+    questionType: false,
     answerOptions: [
       {
         answerText: 'Ngay lập tức giải quyết, buộc hai bên phải dừng lại ngay',
@@ -20,7 +21,9 @@ const questions = [
     ],
   },
   {
-    questionText: 'Chọn 1 trong những tiêu chí sau để đánh giá 1 team mạnh.',
+    questionText:
+      '<h1>Chọn 1 trong những tiêu chí sau để đánh giá 1 team mạnh.</h1>',
+    questionType: false,
     answerOptions: [
       {
         answerText: 'Hiệu quả công việc là tiêu trí quan trọng nhất',
@@ -36,7 +39,8 @@ const questions = [
   },
   {
     questionText:
-      'Trong khi làm việc nhóm, bạn có nên giúp đỡ thành viên trong team không hay chỉ tập trung làm phần việc của mình?',
+      '<h1>Điều bạn không thích khi làm việc nhóm? ladsfasdfasdfasdfasdfadfasdfadfad</h1>',
+    questionType: true,
     answerOptions: [
       {
         answerText: 'Có nên giúp đỡ',

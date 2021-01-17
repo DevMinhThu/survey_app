@@ -61,7 +61,9 @@ const styles = StyleSheet.create({
   },
 
   rate: {color: '#cca300', marginLeft: 3},
-  other_survey_style: {marginTop: 30},
+  other_survey_style: {
+    marginTop: 30,
+  },
 
   lineRow_otherSurvey: {
     borderBottomColor: '#feedd1',
