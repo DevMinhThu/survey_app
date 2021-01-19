@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {IMAGE} from '../../assets/images/Images';
 import styles from './StyleHeader';
 import Feather from 'react-native-vector-icons/Feather';
@@ -15,7 +15,7 @@ export class CustomHeader extends Component {
               <Feather name="menu" size={28} style={styles.styleIcon} />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
             <Feather
               name="bell"
               size={25}
@@ -27,7 +27,7 @@ export class CustomHeader extends Component {
 
         <View style={styles.titleHeader}>
           <Text style={styles.styleHello}>
-            Hello <Text style={styles.styleTitleUser}>Survey</Text>
+            Hello <Text style={styles.styleTitleUser}>Survey!</Text>
           </Text>
           <TouchableOpacity
             style={styles.styleUser}

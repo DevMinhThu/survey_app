@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 25,
     borderBottomLeftRadius: 25,
     backgroundColor: '#1c2732',
-    // backgroundColor: '#00a46c',
+    // backgroundColor: '#2f3640',
   },
 
   header: {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   styleTitleUser: {
     fontSize: 35,
     paddingLeft: 30,
-    color: 'red',
+    color: '#f9ca24',
     fontWeight: 'bold',
   },
 

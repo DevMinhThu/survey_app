@@ -12,6 +12,7 @@ import SurveyScreen from '../pages/Survey/SurveyScreen';
 import HomeSurvey from '../pages/Home/HomeSurvey';
 import CustomDrawerContent from '../components/DrawerContent/Drawer';
 import Profile from '../pages/Profile/Profile';
+import NotifyScreen from '../pages/Notify/NotifyScreen';
 
 // custom hidden header of Stack
 const navOptionHandler = () => ({
@@ -43,6 +44,7 @@ function HomeStack() {
           headerTitle: 'Profile',
         }}
       />
+      <Stack.Screen name="Notification" component={NotifyScreen} />
     </StackHome.Navigator>
   );
 }
@@ -55,6 +57,7 @@ function DrawerNavigator({navigation}) {
   return (
     <Drawer.Navigator
       initialRouteName="Home"
+      drawerStyle={styles.drawerStyle}
       drawerContent={() => <CustomDrawerContent navigation={navigation} />}>
       <Drawer.Screen name="Home" component={HomeStack} />
       <Drawer.Screen name="SurveyScreen" component={SurveyScreen} />
@@ -95,5 +98,9 @@ export default function Routes() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+
+  drawerStyle: {
+    backgroundColor: '#fff',
   },
 });
