@@ -9,11 +9,13 @@ import {
   FlatList,
   SafeAreaView,
 } from 'react-native';
+
 import Feather from 'react-native-vector-icons/Feather';
 
 import {CustomHeader} from '../../components/Header/CustomHeader';
 import styles from './StyleHome';
 import {recommended, otherSurvey} from '../../assets/Data/DataHome';
+import {socialMedia} from '../../assets/Data/DataConfig';
 
 export default function home({navigation}) {
   // recommend and survey item
@@ -87,7 +89,7 @@ export default function home({navigation}) {
       <TouchableOpacity
         style={styles.container_OtherSurvey}
         onPress={() => {
-          navigation.navigate('SurveyScreen');
+          navigation.navigate('SurveyScreen', {data: item.socialMedia});
         }}>
         <ImageBackground
           style={styles.ImgOtherSurvey}

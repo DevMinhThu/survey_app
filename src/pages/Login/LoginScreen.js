@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, TextInput, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import styles from './StyleLogin';
+
 import {firebaseApp} from '../../constants/FirebaseConfig';
 
 export default function LoginScreen({navigation}) {

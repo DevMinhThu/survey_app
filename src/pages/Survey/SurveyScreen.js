@@ -5,27 +5,27 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  Button,
   ScrollView,
   Dimensions,
 } from 'react-native';
-import questions from '../../assets/Data/DataConfig';
+import {questions, socialMedia} from '../../assets/Data/DataConfig';
 import {WebView} from 'react-native-webview';
 
 const windowWidth = Dimensions.get('window').width;
+// const windowHeight = Dimensions.get('window').height;
 
 const Survey = ({navigation}) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [webViewHeight, setWebViewHeight] = useState(60);
   // const [showAnswer, setShowAnswer] = useState(false);
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
 
-  const handleAnswerButtonClick = (isCorrect) => {
+  const handleAnswerButtonClick = () => {
     // Update score for App
-    if (isCorrect === true) {
-      setScore(score + 1);
-    }
+    // if (isCorrect === true) {
+    //   setScore(score + 1);
+    // }
 
     // Move on to a new question
     const nextQuestion = currentQuestion + 1;
@@ -68,9 +68,9 @@ const Survey = ({navigation}) => {
     }
   };
 
-  const onWebViewMessage = (event: WebViewMessageEvent) => {
-    setWebViewHeight({webViewHeight: Number(event.nativeEvent.data)});
-  };
+  // const onWebViewMessage = (event: WebViewMessageEvent) => {
+  //   setWebViewHeight({webViewHeight: Number(event.nativeEvent.data)});
+  // };
 
   const runFirst = `
       document.body.style.backgroundColor = '#ecf0f1';
@@ -100,10 +100,15 @@ const Survey = ({navigation}) => {
 
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.questionCount}>
+        <Text style={styles.textQuestion}>
+          {currentQuestion + 1}/{questions.length}
+        </Text>
+      </View>
       <View style={styles.Survey}>
         {showScore ? (
           <View style={styles.scoreSection}>
-            <Text style={styles.textQuestion}>
+            <Text style={styles.textEnd}>
               Thank you for completing the survey!
             </Text>
             <TouchableOpacity
@@ -115,17 +120,13 @@ const Survey = ({navigation}) => {
         ) : (
           <View>
             <View style={styles.questionSection}>
-              <View style={styles.questionCount}>
-                <Text style={styles.textQuestion}>
-                  {currentQuestion + 1} / {questions.length}
-                </Text>
-              </View>
               <View style={styles.questionText}>
                 {/* text -> webview */}
                 <WebView
                   originWhitelist={['*']}
                   source={{
                     html: questions[currentQuestion].questionText,
+                    // media: socialMedia[currentQuestion].questionText,
                   }}
                   injectedJavaScript={runFirst}
                   // onMessage={onWebViewMessage}
@@ -150,6 +151,11 @@ const Survey = ({navigation}) => {
               ))} */}
               {handleShowAnswer()}
             </View>
+            {/* <View style={styles.questionCount}>
+              <Text style={styles.textQuestion}>
+                {currentQuestion + 1}/{questions.length}
+              </Text>
+            </View> */}
           </View>
         )}
       </View>
@@ -163,12 +169,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ecf0f1',
+    // backgroundColor: 'red',
   },
 
   Survey: {
     backgroundColor: '#ecf0f1',
-    flex: 1,
-    // width: 350,
+    // flex: 1,
+    // width: '100%',
+    // height: windowHeight,
     // borderRadius: 15,
     padding: 30,
     // backgroundColor: 'green',
@@ -177,6 +185,13 @@ const styles = StyleSheet.create({
   },
 
   textQuestion: {
+    color: 'black',
+    fontSize: 25,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  textEnd: {
     color: 'black',
     fontSize: 25,
     marginBottom: 10,
@@ -240,5 +255,15 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
     fontWeight: '500',
+  },
+
+  questionCount: {
+    backgroundColor: 'rgba(206, 214, 224,1.0)',
+    borderRadius: 100,
+    width: 100,
+    height: 40,
+    justifyContent: 'center',
+    left: 330,
+    marginTop: 15,
   },
 });
