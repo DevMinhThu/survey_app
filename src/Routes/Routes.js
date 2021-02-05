@@ -13,6 +13,7 @@ import HomeSurvey from '../pages/Home/HomeSurvey';
 import CustomDrawerContent from '../components/DrawerContent/Drawer';
 import Profile from '../pages/Profile/Profile';
 import NotifyScreen from '../pages/Notify/NotifyScreen';
+import SetupScreen from '../pages/Setup/SetupScreen';
 
 // custom hidden header of Stack
 const navOptionHandler = () => ({
@@ -35,6 +36,7 @@ function HomeStack() {
         component={SurveyScreen}
         options={{
           headerTitle: 'Survey',
+          headerTitleAlign: 'center',
         }}
       />
       <StackHome.Screen
@@ -42,6 +44,15 @@ function HomeStack() {
         component={Profile}
         options={{
           headerTitle: 'Profile',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <StackHome.Screen
+        name="Settings"
+        component={SetupScreen}
+        options={{
+          headerTitle: 'Settings',
+          headerTitleAlign: 'center',
         }}
       />
       <Stack.Screen name="Notification" component={NotifyScreen} />
@@ -73,6 +84,7 @@ export default function Routes() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
+          {/* <Stack.Screen name="Set" component={SetupScreen} /> */}
           <Stack.Screen
             name="Welcome"
             component={WelcomeScreen}
