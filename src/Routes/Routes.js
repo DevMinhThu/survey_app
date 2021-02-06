@@ -84,7 +84,6 @@ export default function Routes() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          {/* <Stack.Screen name="Set" component={SetupScreen} /> */}
           <Stack.Screen
             name="Welcome"
             component={WelcomeScreen}
