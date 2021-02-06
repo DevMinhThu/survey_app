@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import Feather from 'react-native-vector-icons/Feather';
 
 // screen
 import WelcomeScreen from '../pages/Welcome/WelcomeScreen';
@@ -35,7 +36,14 @@ function HomeStack() {
         name="SurveyScreen"
         component={SurveyScreen}
         options={{
-          headerTitle: 'Survey',
+          headerTitle: () => {
+            return (
+              <View style={styles.containerTitleHeader}>
+                <Feather name="file-text" size={20} color="#3d475a" />
+                <Text style={styles.titleHeader}>Survey</Text>
+              </View>
+            );
+          },
           headerTitleAlign: 'center',
         }}
       />
@@ -43,7 +51,14 @@ function HomeStack() {
         name="Profile"
         component={Profile}
         options={{
-          headerTitle: 'Profile',
+          headerTitle: () => {
+            return (
+              <View style={styles.containerTitleHeader}>
+                <Feather name="user" size={20} color="#3d475a" />
+                <Text style={styles.titleHeader}>Profile</Text>
+              </View>
+            );
+          },
           headerTitleAlign: 'center',
         }}
       />
@@ -51,7 +66,14 @@ function HomeStack() {
         name="Settings"
         component={SetupScreen}
         options={{
-          headerTitle: 'Settings',
+          headerTitle: () => {
+            return (
+              <View style={styles.containerTitleHeader}>
+                <Feather name="settings" size={20} color="#3d475a" />
+                <Text style={styles.titleHeader}>Settings</Text>
+              </View>
+            );
+          },
           headerTitleAlign: 'center',
         }}
       />
@@ -89,7 +111,21 @@ export default function Routes() {
             component={WelcomeScreen}
             options={navOptionHandler}
           />
-          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{
+              headerTitle: () => {
+                return (
+                  <View style={styles.containerTitleHeader}>
+                    <Feather name="key" size={20} color="#3d475a" />
+                    <Text style={styles.titleHeader}>Login</Text>
+                  </View>
+                );
+              },
+              headerTitleAlign: 'center',
+            }}
+          />
           <Stack.Screen
             name="Register"
             component={RegisterScreen}
@@ -113,5 +149,18 @@ const styles = StyleSheet.create({
 
   drawerStyle: {
     backgroundColor: '#fff',
+  },
+
+  titleHeader: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginLeft: 5,
+    color: '#3d475a',
+  },
+
+  containerTitleHeader: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

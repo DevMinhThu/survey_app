@@ -68,35 +68,11 @@ const Survey = ({navigation}) => {
     }
   };
 
-  // const onWebViewMessage = (event: WebViewMessageEvent) => {
-  //   setWebViewHeight({webViewHeight: Number(event.nativeEvent.data)});
-  // };
-
   const runFirst = `
-      document.body.style.backgroundColor = '#ecf0f1';
-      document.body.style.fontSize = 30;
+      document.body.style.backgroundColor = '#fff';
+      document.body.style.fontSize = 28;
       window.ReactNativeWebView.postMessage(document.body.scrollHeight)
     `;
-
-  // const generateHtml = (content) => `
-  //   <!DOCTYPE html>\n
-  //   <html>
-  //     <head>
-  //       <title>Web View</title>
-  //       <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  //       <meta name="viewport" content="width=320, user-scalable=no">
-  //       <style type="text/css">
-  //         body {
-  //           margin: 0;
-  //           padding: 0;
-  //         }
-  //       </style>
-  //     </head>
-  //     <body>
-  //       ${content}
-  //     </body>
-  //   </html>
-  // `;
 
   return (
     <ScrollView style={styles.container}>
@@ -126,36 +102,14 @@ const Survey = ({navigation}) => {
                   originWhitelist={['*']}
                   source={{
                     html: questions[currentQuestion].questionText,
-                    // media: socialMedia[currentQuestion].questionText,
                   }}
                   injectedJavaScript={runFirst}
                   // onMessage={onWebViewMessage}
                   style={{height: webViewHeight}}
                 />
-                {/* <Text style={styles.textQuestion}>
-                  {questions[currentQuestion].questionText}
-                </Text> */}
               </View>
             </View>
-            <View style={styles.answerSection}>
-              {/* {questions[currentQuestion].answerOptions.map((answerOptions) => (
-                <TouchableOpacity
-                  style={styles.buttonAns}
-                  onPress={() =>
-                    handleAnswerButtonClick(answerOptions.isCorrect)
-                  }>
-                  <Text style={styles.textAnswer}>
-                    {answerOptions.answerText}
-                  </Text>
-                </TouchableOpacity>
-              ))} */}
-              {handleShowAnswer()}
-            </View>
-            {/* <View style={styles.questionCount}>
-              <Text style={styles.textQuestion}>
-                {currentQuestion + 1}/{questions.length}
-              </Text>
-            </View> */}
+            <View style={styles.answerSection}>{handleShowAnswer()}</View>
           </View>
         )}
       </View>
@@ -168,55 +122,52 @@ export default Survey;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ecf0f1',
-    // backgroundColor: 'red',
+    backgroundColor: '#fff',
   },
 
   Survey: {
-    backgroundColor: '#ecf0f1',
-    // flex: 1,
-    // width: '100%',
-    // height: windowHeight,
-    // borderRadius: 15,
+    backgroundColor: '#fff',
     padding: 30,
-    // backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   textQuestion: {
-    color: 'black',
-    fontSize: 25,
+    color: '#3d475a',
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
   },
 
   textEnd: {
-    color: 'black',
-    fontSize: 25,
+    color: '#3d475a',
+    fontSize: 22,
     marginBottom: 10,
     fontWeight: 'bold',
     textAlign: 'center',
   },
 
   buttonAns: {
-    backgroundColor: '#ecf0f1',
+    backgroundColor: '#faece673',
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
     padding: 10,
-    borderRadius: 15,
-    borderWidth: 2,
+    borderRadius: 5,
+    borderWidth: 1,
     borderColor: '#bdc3c7',
   },
 
+  answerSection: {},
+
   textAnswer: {
-    color: 'black',
-    fontSize: 18,
+    color: '#3d475a',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 
   scoreSection: {
-    backgroundColor: '#ecf0f1',
+    backgroundColor: '#faece673',
     borderRadius: 15,
     padding: 20,
     justifyContent: 'center',
@@ -255,15 +206,16 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
     fontWeight: '500',
+    color: '#007acc',
   },
 
   questionCount: {
     backgroundColor: 'rgba(206, 214, 224,1.0)',
     borderRadius: 100,
-    width: 100,
-    height: 40,
+    width: 80,
+    height: 30,
     justifyContent: 'center',
-    left: 330,
+    left: 350,
     marginTop: 15,
   },
 });
