@@ -15,6 +15,7 @@ import CustomDrawerContent from '../components/DrawerContent/Drawer';
 import Profile from '../pages/Profile/Profile';
 import NotifyScreen from '../pages/Notify/NotifyScreen';
 import SetupScreen from '../pages/Setup/SetupScreen';
+import OnboardingScreen from '../components/OnboardingScreen/OnboardingScreen';
 
 // custom hidden header of Stack
 const navOptionHandler = () => ({
@@ -106,6 +107,11 @@ export default function Routes() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="Onboarding"
+            component={OnboardingScreen}
+            options={navOptionHandler}
+          />
           <Stack.Screen
             name="Welcome"
             component={WelcomeScreen}

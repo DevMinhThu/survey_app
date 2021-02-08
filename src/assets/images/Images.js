@@ -11,6 +11,9 @@ const IMAGE = {
   EDUCATION: require('./education.jpg'),
   SOCIAL: require('./social.jpg'),
   WORK: require('./work.jpg'),
+  ONBOARDING1: require('./onboarding-img1.jpg'),
+  ONBOARDING2: require('./onboarding-img2.jpg'),
+  ONBOARDING3: require('./onboarding-img3.jpg'),
 };
 
 export {IMAGE};
