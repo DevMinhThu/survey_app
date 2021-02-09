@@ -45,7 +45,7 @@ export default function home({navigation}) {
           imageStyle={{borderRadius: 2}}
           source={item.ImgBackground}
           resizeMode="stretch">
-          <View style={{flex: 1}}>
+          <View style={styles.styleItemRecommended}>
             <View style={styles.titleSurvey}>
               <Text style={styles.nameSurvey}>{item.nameSurvey}</Text>
             </View>

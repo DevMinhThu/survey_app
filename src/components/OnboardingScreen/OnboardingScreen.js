@@ -12,19 +12,20 @@ import {IMAGE} from '../../assets/images/Images';
 const widthScreen = Dimensions.get('screen').width;
 const heightScreen = Dimensions.get('screen').height;
 
+// handle button onboarding
 const Skip = ({...props}) => (
-  <TouchableOpacity style={{marginHorizontal: 15}} {...props}>
-    <Text style={{fontSize: 16}}>Skip</Text>
+  <TouchableOpacity style={styles.buttonOnboarding} {...props}>
+    <Text style={styles.textButtonOnboarding}>Skip</Text>
   </TouchableOpacity>
 );
 const Next = ({...props}) => (
-  <TouchableOpacity style={{marginHorizontal: 15}} {...props}>
-    <Text style={{fontSize: 16}}>Next</Text>
+  <TouchableOpacity style={styles.buttonOnboarding} {...props}>
+    <Text style={styles.textButtonOnboarding}>Next</Text>
   </TouchableOpacity>
 );
 const Done = ({...props}) => (
-  <TouchableOpacity style={{marginHorizontal: 15}} {...props}>
-    <Text style={{fontSize: 16}}>Done</Text>
+  <TouchableOpacity style={styles.buttonOnboarding} {...props}>
+    <Text style={styles.textButtonOnboarding}>Done</Text>
   </TouchableOpacity>
 );
 
@@ -37,7 +38,8 @@ const OnboardingScreen = ({navigation}) => {
       onSkip={() => navigation.replace('Welcome')}
       onDone={() => navigation.navigate('Welcome')}
       bottomBarColor="#f7f8fd"
-      subTitleStyles={{marginBottom: 150}}
+      titleStyles={styles.styleTitle_Onboarding}
+      subTitleStyles={styles.styleSubTitle_Onboarding}
       pages={[
         {
           backgroundColor: '#f7f8fd',
@@ -84,5 +86,25 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  buttonOnboarding: {
+    marginHorizontal: 15,
+  },
+
+  textButtonOnboarding: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  styleTitle_Onboarding: {
+    fontFamily: 'HelveticaNeueBold',
+    fontSize: 30,
+  },
+
+  styleSubTitle_Onboarding: {
+    marginBottom: 150,
+    fontFamily: 'HelveticaNeueBold',
+    fontSize: 18,
   },
 });

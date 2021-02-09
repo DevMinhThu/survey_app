@@ -37,7 +37,13 @@ export default function LoginScreen({navigation}) {
 
   return (
     <View style={styles.container}>
-      <Text style={{fontSize: 25, marginTop: 20, fontWeight: 'bold'}}>
+      <Text
+        style={{
+          fontSize: 25,
+          marginTop: 20,
+          fontWeight: 'bold',
+          fontFamily: 'HelveticaNeueBold',
+        }}>
         Welcome Back!
       </Text>
       <Text style={{fontSize: 16, marginTop: 20, color: 'gray'}}>

@@ -39,16 +39,16 @@ const styles = StyleSheet.create({
 
   ImgProduct: {
     width: width - 86 * 3,
-    height: height - 295 * 2,
-    marginRight: 10,
+    height: height - 290 * 2,
+    marginRight: 20,
   },
 
   nameSurvey: {
     color: 'black',
     fontSize: 18,
-    fontWeight: '900',
     padding: 15,
     zIndex: 20,
+    fontFamily: 'HelveticaNeueMediumItalic',
   },
 
   titleSurvey: {flex: 5},
@@ -132,11 +132,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     zIndex: -10,
   },
+
   iconSearch: {
     position: 'absolute',
     top: 18,
     left: 53,
   },
+
   buttonIcon: {
     top: 8,
     right: 35,
@@ -146,9 +148,18 @@ const styles = StyleSheet.create({
     height: 40,
     position: 'absolute',
   },
+
   iconSetting: {
     left: 12,
     top: 10,
   },
+
+  styleItemRecommended: {
+    flex: 1,
+    borderRadius: 15,
+    borderColor: '#0A0A15',
+    borderWidth: 0.5,
+  },
 });
+
 export default styles;

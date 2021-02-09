@@ -9,7 +9,7 @@ const recommended = [
   {
     id: 2,
     nameSurvey: 'Work from Home',
-    ImgBackground: IMAGE.IMG3,
+    ImgBackground: IMAGE.ONBOARDING1,
     rate: '100+',
   },
   {
@@ -21,7 +21,7 @@ const recommended = [
   {
     id: 4,
     nameSurvey: 'Shopping',
-    ImgBackground: IMAGE.IMG2,
+    ImgBackground: IMAGE.ONBOARDING2,
     rate: '80+',
   },
   {

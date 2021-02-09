@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   titleWelcome: {
     fontSize: 35,
     fontWeight: 'bold',
+    fontFamily: 'HelveticaNeueBold',
   },
 
   titleDetail: {
