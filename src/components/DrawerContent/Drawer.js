@@ -27,7 +27,7 @@ export default class CustomDrawerContent extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.styleButton}
-            onPress={() => this.props.navigation.navigate('SurveyScreen')}>
+            onPress={() => this.props.navigation.navigate('SurveyList')}>
             <Feather name="file-text" size={25} style={styles.styleIcon} />
             <Text style={styles.textStyle}>Survey</Text>
           </TouchableOpacity>

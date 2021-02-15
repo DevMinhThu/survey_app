@@ -16,7 +16,7 @@ import Profile from '../pages/Profile/Profile';
 import NotifyScreen from '../pages/Notify/NotifyScreen';
 import SetupScreen from '../pages/Setup/SetupScreen';
 import OnboardingScreen from '../components/OnboardingScreen/OnboardingScreen';
-
+import SurveyList from '../pages/SurveyList/SurveyList';
 // custom hidden header of Stack
 const navOptionHandler = () => ({
   headerShown: false,
@@ -79,6 +79,11 @@ function HomeStack() {
         }}
       />
       <Stack.Screen name="Notification" component={NotifyScreen} />
+      <Stack.Screen
+        name="SurveyList"
+        component={SurveyList}
+        options={navOptionHandler}
+      />
     </StackHome.Navigator>
   );
 }
@@ -107,6 +112,11 @@ export default function Routes() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
+          {/* <Stack.Screen
+            name="SurveyList"
+            component={SurveyList}
+            options={navOptionHandler}
+          /> */}
           <Stack.Screen
             name="Onboarding"
             component={OnboardingScreen}

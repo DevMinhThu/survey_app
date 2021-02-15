@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+} from 'react-native';
 import {IMAGE} from '../../assets/images/Images';
 import styles from './StyleHeader';
 import Feather from 'react-native-vector-icons/Feather';
