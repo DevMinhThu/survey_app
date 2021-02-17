@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     padding: 15,
     zIndex: 20,
-    fontFamily: 'HelveticaNeueMediumItalic',
+    fontWeight: '600',
   },
 
   titleSurvey: {flex: 5},
@@ -60,7 +60,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  rate: {color: '#cca300', marginLeft: 3},
+  rate: {
+    color: '#cca300',
+    marginLeft: 3,
+    fontWeight: 'bold',
+  },
+
   other_survey_style: {
     marginTop: 30,
   },

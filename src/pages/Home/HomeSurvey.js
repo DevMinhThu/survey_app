@@ -11,11 +11,12 @@ import {
 } from 'react-native';
 
 import Feather from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {CustomHeader} from '../../components/Header/CustomHeader';
 import styles from './StyleHome';
 import {recommended, otherSurvey} from '../../assets/Data/DataHome';
-import {socialMedia} from '../../assets/Data/DataConfig';
+// import {socialMedia} from '../../assets/Data/DataConfig';
 
 export default function home({navigation}) {
   // recommend and survey item
@@ -52,7 +53,7 @@ export default function home({navigation}) {
             <View style={styles.evaluate}>
               <View style={{flexDirection: 'row'}}>
                 <TouchableOpacity>
-                  <Feather name="heart" size={20} color="red" />
+                  <Icon name="heart" size={20} color="red" />
                 </TouchableOpacity>
                 <Text style={styles.rate}>{item.rate}</Text>
               </View>

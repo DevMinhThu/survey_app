@@ -2,16 +2,18 @@ import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 
-const SurveyItem = (props) => {
+const SurveyItem = (props, {navigation}) => {
   return (
     <TouchableOpacity
-      style={[styles.containerButton, {backgroundColor: props.bg}]}>
+      style={[styles.containerButton, {backgroundColor: props.bg}]}
+      onPress={() => navigation.navigate('Profile')}>
       <Image source={props.img} style={styles.imgItems} />
 
       <View style={styles.containerTextItems}>
         <Text style={styles.titleItems}>{props.title}</Text>
         <Text style={styles.subTitle}>{props.subTitle}</Text>
       </View>
+
       <ProgressCircle
         percent={props.percent}
         radius={29}

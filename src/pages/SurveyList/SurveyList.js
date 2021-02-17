@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import {Modalize} from 'react-native-modalize';
 import {IMAGE} from '../../assets/images/Images';
 import SurveyItem from './SurveyItem';
@@ -14,19 +21,26 @@ const SurveyList = ({navigation}) => {
           style={styles.buttonBack}>
           <Image source={IMAGE.BACK} style={styles.iconHeader} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonDraw}>
+        <TouchableOpacity
+          onPress={() => navigation.openDrawer()}
+          style={styles.buttonDraw}>
           <Image source={IMAGE.DRAW} style={styles.iconHeader} />
         </TouchableOpacity>
       </View>
 
       {/* title */}
+      <Image
+        source={require('../../assets/images/surveyIcon.png')}
+        style={styles.iconSurvey}
+      />
       <Text style={styles.title}>Survey List</Text>
+      <Text style={styles.subTitle}>General list of surveys</Text>
 
       {/* Madalize */}
       <Modalize
         handleStyle={styles.styleHandle}
         modalStyle={styles.styleModal}
-        alwaysOpen={550}
+        alwaysOpen={500}
         scrollViewProps={{showsVerticalScrollIndicator: false}}>
         <View style={styles.containerItemList}>
           <SurveyItem
@@ -34,35 +48,36 @@ const SurveyList = ({navigation}) => {
             title="Disease Situation"
             bg="#fcf2ff"
             subTitle="CN lúc 11:09"
-            percent="65"
+            percent={65}
+            // nameScreen="Home"
           />
           <SurveyItem
-            img={require('../../assets/images/workHome.webp')}
+            img={IMAGE.WORK_HOME}
             title="Work from Home"
             bg="#fef8e3"
             subTitle="Hôm qua lúc 17:13"
-            percent="86"
+            percent={86}
           />
           <SurveyItem
-            img={require('../../assets/images/education.png')}
+            img={IMAGE.EDUCATION2}
             title="Education"
             bg="#fdddf3"
             subTitle="8 giờ trước"
-            percent="25"
+            percent={25}
           />
           <SurveyItem
-            img={require('../../assets/images/media.png')}
+            img={IMAGE.MEDIA}
             title="Social Media"
             bg="#99ddff"
             subTitle="T.3 lúc 13:28"
-            percent="75"
+            percent={75}
           />
           <SurveyItem
-            img={require('../../assets/images/lifeQuality.png')}
+            img={IMAGE.LIFE}
             title="Life Quality"
             bg="#fff0ee"
             subTitle="T.2 lúc 00:28"
-            percent="16"
+            percent={16}
           />
         </View>
       </Modalize>
@@ -108,7 +123,7 @@ const styles = StyleSheet.create({
     marginLeft: 290,
   },
 
-  // title
+  // title & subTitle
   title: {
     color: '#f9ca24',
     fontSize: 35,
@@ -116,7 +131,16 @@ const styles = StyleSheet.create({
     width: 200,
     alignSelf: 'center',
     textAlign: 'center',
-    marginTop: 34,
+    marginTop: 3,
+  },
+
+  subTitle: {
+    color: '#fff',
+    fontSize: 20,
+    width: 250,
+    alignSelf: 'center',
+    textAlign: 'center',
+    marginTop: 5,
   },
 
   containerItemList: {
@@ -132,5 +156,12 @@ const styles = StyleSheet.create({
   styleModal: {
     borderTopLeftRadius: 60,
     borderTopRightRadius: 60,
+  },
+
+  iconSurvey: {
+    width: 50,
+    height: 50,
+    marginTop: 35,
+    alignSelf: 'center',
   },
 });

@@ -11,15 +11,20 @@ const IMAGE = {
   EDUCATION: require('./education.jpg'),
   SOCIAL: require('./social.jpg'),
   WORK: require('./work.jpg'),
+
+  // OnboardingScreen
   ONBOARDING1: require('./onboarding-img1.jpg'),
   ONBOARDING2: require('./onboarding-img2.jpg'),
   ONBOARDING3: require('./onboarding-img3.jpg'),
+
+  // In SurveyList
   BACK: require('./back1.png'),
   DRAW: require('./draw.png'),
-  NEXT2: require('./a3.png'),
-  NEXT: require('./next.png'),
   VIRUS: require('./coronavirus.png'),
   LIFE: require('./lifeQuality.png'),
+  WORK_HOME: require('./workHome.webp'),
+  EDUCATION2: require('./education.png'),
+  MEDIA: require('./media.png'),
 };
 
 export {IMAGE};
