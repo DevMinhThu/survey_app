@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 25,
     borderBottomLeftRadius: 25,
     backgroundColor: '#1c2732',
-    // backgroundColor: '#2f3640',
   },
 
   header: {

@@ -1,21 +1,12 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  ImageBackground,
-} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {Modalize} from 'react-native-modalize';
 import {IMAGE} from '../../assets/images/Images';
 import SurveyItem from './SurveyItem';
 
 const SurveyList = ({navigation}) => {
   return (
-    <ImageBackground
-      source={IMAGE.IMG_BACKGROUND}
-      style={styles.styleImgBackground}>
+    <View style={styles.styleImgBackground}>
       {/* header */}
       <View style={styles.header}>
         <TouchableOpacity
@@ -39,33 +30,43 @@ const SurveyList = ({navigation}) => {
         scrollViewProps={{showsVerticalScrollIndicator: false}}>
         <View style={styles.containerItemList}>
           <SurveyItem
-            img={require('../../assets/images/register.png')}
-            title="Working from Home"
-            bg="#fef8e3"
-          />
-          <SurveyItem
-            img={require('../../assets/images/social.jpg')}
-            title="Working from Home"
-            bg="#fdddf3"
-          />
-          <SurveyItem
-            img={require('../../assets/images/workplace.png')}
-            title="Working from Home"
-            bg="#fff0ee"
-          />
-          <SurveyItem
-            img={require('../../assets/images/education.jpg')}
-            title="Working from Home"
+            img={IMAGE.VIRUS}
+            title="Disease Situation"
             bg="#fcf2ff"
+            subTitle="CN lúc 11:09"
+            percent="65"
           />
           <SurveyItem
-            img={require('../../assets/images/onboarding-img2.jpg')}
-            title="Working from Home"
+            img={require('../../assets/images/workHome.webp')}
+            title="Work from Home"
+            bg="#fef8e3"
+            subTitle="Hôm qua lúc 17:13"
+            percent="86"
+          />
+          <SurveyItem
+            img={require('../../assets/images/education.png')}
+            title="Education"
             bg="#fdddf3"
+            subTitle="8 giờ trước"
+            percent="25"
+          />
+          <SurveyItem
+            img={require('../../assets/images/media.png')}
+            title="Social Media"
+            bg="#99ddff"
+            subTitle="T.3 lúc 13:28"
+            percent="75"
+          />
+          <SurveyItem
+            img={require('../../assets/images/lifeQuality.png')}
+            title="Life Quality"
+            bg="#fff0ee"
+            subTitle="T.2 lúc 00:28"
+            percent="16"
           />
         </View>
       </Modalize>
-    </ImageBackground>
+    </View>
   );
 };
 
@@ -73,6 +74,7 @@ export default SurveyList;
 
 const styles = StyleSheet.create({
   styleImgBackground: {
+    backgroundColor: '#1c2732',
     width: '100%',
     height: '100%',
   },
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
   },
 
   buttonBack: {
-    backgroundColor: '#f06d71',
+    backgroundColor: 'rgba(221,221,221,0.2)',
     paddingHorizontal: 10,
     paddingVertical: 13,
     borderRadius: 10,
@@ -102,13 +104,13 @@ const styles = StyleSheet.create({
     paddingVertical: 13,
     borderRadius: 10,
     marginTop: 25,
-    backgroundColor: '#f06d71',
+    backgroundColor: 'rgba(221,221,221,0.2)',
     marginLeft: 290,
   },
 
   // title
   title: {
-    color: '#FFF',
+    color: '#f9ca24',
     fontSize: 35,
     fontFamily: 'HelveticaNeueBold',
     width: 200,

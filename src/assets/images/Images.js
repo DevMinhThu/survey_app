@@ -14,11 +14,12 @@ const IMAGE = {
   ONBOARDING1: require('./onboarding-img1.jpg'),
   ONBOARDING2: require('./onboarding-img2.jpg'),
   ONBOARDING3: require('./onboarding-img3.jpg'),
-  IMG_BACKGROUND: require('./ImgBackground1.png'),
   BACK: require('./back1.png'),
   DRAW: require('./draw.png'),
   NEXT2: require('./a3.png'),
   NEXT: require('./next.png'),
+  VIRUS: require('./coronavirus.png'),
+  LIFE: require('./lifeQuality.png'),
 };
 
 export {IMAGE};
