@@ -6,17 +6,14 @@ const questions = [
     answerOptions: [
       {
         answerText: 'Ngay lập tức giải quyết, buộc hai bên phải dừng lại ngay',
-        isCorrect: false,
       },
       {
         answerText:
           'Mềm mỏng, lắng nghe và khuyên bảo từng người, giữ hoà khí trong đội',
-        isCorrect: false,
       },
       {
         answerText:
           'Lắng nghe, quan sát và tìm ra nguyên nhân và giải pháp xung đột.',
-        isCorrect: true,
       },
     ],
   },
@@ -27,14 +24,12 @@ const questions = [
     answerOptions: [
       {
         answerText: 'Hiệu quả công việc là tiêu trí quan trọng nhất',
-        isCorrect: false,
       },
       {
         answerText: 'Có sự tin tưởng và gắn kết vững chắc làm nền tảng cho CV',
-        isCorrect: true,
       },
-      {answerText: 'Nhiều người giỏi', isCorrect: false},
-      {answerText: 'Có thành viên gánh team', isCorrect: false},
+      {answerText: 'Nhiều người giỏi'},
+      {answerText: 'Có thành viên gánh team'},
     ],
   },
   {
@@ -43,69 +38,129 @@ const questions = [
     answerOptions: [
       {
         answerText: 'Có nên giúp đỡ',
-        isCorrect: true,
       },
       {
         answerText: 'Không nên giúp đỡ',
-        isCorrect: false,
       },
     ],
   },
 ];
 
+// socialMedia data
 const socialMedia = [
   {
-    questionText: '<h1>Test Social Media</h1>',
+    questionText: '<h1>Bạn có sử dụng mạng xã hội không?</h1>',
     questionType: false,
     answerOptions: [
       {
-        answerText: 'Ngay lập tức giải quyết, buộc hai bên phải dừng lại ngay',
-        isCorrect: false,
+        answerText: 'Có, tôi có sử dụng',
       },
       {
-        answerText:
-          'Mềm mỏng, lắng nghe và khuyên bảo từng người, giữ hoà khí trong đội',
-        isCorrect: false,
+        answerText: 'Không, tôi không dùng nó',
+      },
+    ],
+  },
+  {
+    questionText: '<h1>Độ tuổi nào bạn bắt đầu dùng MXH?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Từ 14-18 tuổi',
       },
       {
-        answerText:
-          'Lắng nghe, quan sát và tìm ra nguyên nhân và giải pháp xung đột.',
-        isCorrect: true,
+        answerText: 'Từ 18-25 tuổi',
       },
+      {
+        answerText: 'Từ 25-40 tuổi',
+      },
+      {
+        answerText: 'Từ 40-65 tuổi',
+      },
+      {
+        answerText: 'Trên 65 tuổi',
+      },
+    ],
+  },
+  {
+    questionText: '<h1>Bạn đã dùng những mạng xã hội nào dưới đây?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Facebook',
+      },
+      {
+        answerText: 'Instagram',
+      },
+      {answerText: 'Twitter'},
+      {
+        answerText: 'Tiktok',
+      },
+      {
+        answerText: 'Tinder',
+      },
+      {
+        answerText: 'Zalo',
+      },
+      {answerText: 'Tất cả các MXH trên'},
     ],
   },
   {
     questionText:
-      '<h1>Chọn 1 trong những tiêu chí sau để đánh giá 1 team mạnh.</h1>',
+      '<h1>Hãy viết một vài điều, nói lên vì sao bạn sử dụng MXH.</h1>',
+    questionType: true,
+  },
+];
+
+// personal data
+const personal = [
+  {
+    questionText: '<h1>What is your name? (Tên của bạn là gì?)</h1>',
+    questionType: true,
+  },
+  {
+    questionText: '<h1>Gender/Giới tính</h1>',
     questionType: false,
     answerOptions: [
       {
-        answerText: 'Hiệu quả công việc là tiêu trí quan trọng nhất',
-        isCorrect: false,
+        answerText: 'Male (Nam)',
       },
       {
-        answerText: 'Có sự tin tưởng và gắn kết vững chắc làm nền tảng cho CV',
-        isCorrect: true,
+        answerText: 'Female (Nữ)',
       },
-      {answerText: 'Nhiều người giỏi', isCorrect: false},
-      {answerText: 'Có thành viên gánh team', isCorrect: false},
     ],
   },
   {
-    questionText: '<h1>Điều bạn không thích khi làm việc nhóm?</h1>',
-    questionType: true,
+    questionText: '<h1>Age/Độ Tuổi</h1>',
+    questionType: false,
     answerOptions: [
       {
-        answerText: 'Có nên giúp đỡ',
-        isCorrect: true,
+        answerText: 'Less than 25 (Dưới 25 tuổi)',
       },
       {
-        answerText: 'Không nên giúp đỡ',
-        isCorrect: false,
+        answerText: 'From 26~35 years old. (Từ 26-35 tuổi)',
+      },
+      {
+        answerText: 'More than 35 (Trên 35 tuổi)',
+      },
+    ],
+  },
+  {
+    questionText: '<h1>Occupation/Nghề nghiệp</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Government (Chính trị)',
+      },
+      {
+        answerText: 'Business (Kinh doanh)',
+      },
+      {answerText: 'Employee (Nhân viên)'},
+      {
+        answerText: 'Others (Khác)',
       },
     ],
   },
 ];
 
 // module.exports = questions;
-export {questions, socialMedia};
+export {questions, socialMedia, personal};

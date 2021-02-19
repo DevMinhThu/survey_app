@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 
-const SurveyItem = (props, {navigation}) => {
+const SurveyItem = (props) => {
   return (
     <TouchableOpacity
       style={[styles.containerButton, {backgroundColor: props.bg}]}
-      onPress={() => navigation.navigate('Profile')}>
+      onPress={props.onPress}>
       <Image source={props.img} style={styles.imgItems} />
 
       <View style={styles.containerTextItems}>

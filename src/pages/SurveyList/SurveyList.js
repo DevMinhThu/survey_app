@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {Modalize} from 'react-native-modalize';
 import {IMAGE} from '../../assets/images/Images';
 import SurveyItem from './SurveyItem';
@@ -49,7 +42,7 @@ const SurveyList = ({navigation}) => {
             bg="#fcf2ff"
             subTitle="CN lúc 11:09"
             percent={65}
-            // nameScreen="Home"
+            onPress={() => navigation.navigate('Profile')}
           />
           <SurveyItem
             img={IMAGE.WORK_HOME}
@@ -57,13 +50,15 @@ const SurveyList = ({navigation}) => {
             bg="#fef8e3"
             subTitle="Hôm qua lúc 17:13"
             percent={86}
+            onPress={() => navigation.navigate('Settings')}
           />
           <SurveyItem
             img={IMAGE.EDUCATION2}
-            title="Education"
+            title="Working Group"
             bg="#fdddf3"
             subTitle="8 giờ trước"
             percent={25}
+            onPress={() => navigation.navigate('SurveyScreen')}
           />
           <SurveyItem
             img={IMAGE.MEDIA}

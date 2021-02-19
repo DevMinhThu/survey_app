@@ -8,6 +8,7 @@ import {
   ImageBackground,
   FlatList,
   SafeAreaView,
+  Image,
 } from 'react-native';
 
 import Feather from 'react-native-vector-icons/Feather';
@@ -16,7 +17,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {CustomHeader} from '../../components/Header/CustomHeader';
 import styles from './StyleHome';
 import {recommended, otherSurvey} from '../../assets/Data/DataHome';
-// import {socialMedia} from '../../assets/Data/DataConfig';
 
 export default function home({navigation}) {
   // recommend and survey item
@@ -40,29 +40,35 @@ export default function home({navigation}) {
 
   const renderSurveyItem = (item) => {
     return (
-      <TouchableOpacity>
-        <ImageBackground
-          style={styles.ImgProduct}
-          imageStyle={{borderRadius: 2}}
-          source={item.ImgBackground}
-          resizeMode="stretch">
-          <View style={styles.styleItemRecommended}>
-            <View style={styles.titleSurvey}>
-              <Text style={styles.nameSurvey}>{item.nameSurvey}</Text>
-            </View>
-            <View style={styles.evaluate}>
-              <View style={{flexDirection: 'row'}}>
-                <TouchableOpacity>
-                  <Icon name="heart" size={20} color="red" />
-                </TouchableOpacity>
-                <Text style={styles.rate}>{item.rate}</Text>
-              </View>
-              <TouchableOpacity>
-                <Feather name="plus-circle" size={20} color="gray" />
-              </TouchableOpacity>
-            </View>
+      <TouchableOpacity
+        style={[styles.styleButtonProduct, {backgroundColor: item.bg}]}
+        onPress={() => {
+          navigation.navigate(item.name);
+        }}>
+        <View>
+          <View style={styles.titleSurvey}>
+            <Text style={styles.nameSurvey}>{item.nameSurvey}</Text>
           </View>
-        </ImageBackground>
+
+          <Image
+            source={item.ImgBackground}
+            style={styles.ImgProduct}
+            resizeMode="stretch"
+          />
+
+          {/* evaluate */}
+          <View style={styles.evaluate}>
+            <View style={{flexDirection: 'row'}}>
+              <TouchableOpacity>
+                <Icon name="heart" size={20} color="red" />
+              </TouchableOpacity>
+              <Text style={styles.rate}>{item.rate}</Text>
+            </View>
+            <TouchableOpacity>
+              <Feather name="plus-circle" size={20} color="gray" />
+            </TouchableOpacity>
+          </View>
+        </View>
       </TouchableOpacity>
     );
   };
@@ -90,7 +96,7 @@ export default function home({navigation}) {
       <TouchableOpacity
         style={styles.container_OtherSurvey}
         onPress={() => {
-          navigation.navigate('SurveyScreen', {data: item.socialMedia});
+          navigation.navigate('SurveyScreen', {data: item.data});
         }}>
         <ImageBackground
           style={styles.ImgOtherSurvey}

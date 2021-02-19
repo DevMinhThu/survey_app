@@ -1,34 +1,43 @@
 import {IMAGE} from '../images/Images';
+import {questions, socialMedia, personal} from '../../assets/Data/DataConfig';
+
 const recommended = [
   {
     id: 1,
-    nameSurvey: 'Education',
-    ImgBackground: IMAGE.IMG1,
+    nameSurvey: 'Disease Situation',
+    ImgBackground: IMAGE.VIRUS,
     rate: '99+',
+    bg: '#e0e0eb',
+    name: 'Profile',
   },
   {
     id: 2,
     nameSurvey: 'Work from Home',
-    ImgBackground: IMAGE.ONBOARDING1,
+    ImgBackground: IMAGE.WORK_HOME,
     rate: '100+',
+    bg: '#ffe6cc',
+    name: 'Settings',
   },
   {
     id: 3,
-    nameSurvey: 'Productivity',
-    ImgBackground: IMAGE.IMG4,
+    nameSurvey: 'Life Quality',
+    ImgBackground: IMAGE.LIFE,
     rate: '66+',
+    bg: '#fdddf3',
   },
   {
     id: 4,
-    nameSurvey: 'Shopping',
-    ImgBackground: IMAGE.ONBOARDING2,
+    nameSurvey: 'Social Media',
+    ImgBackground: IMAGE.MEDIA,
     rate: '80+',
+    bg: '#85e0e0',
   },
   {
     id: 5,
-    nameSurvey: 'Life Quality',
-    ImgBackground: IMAGE.IMG5,
+    nameSurvey: 'Education',
+    ImgBackground: IMAGE.EDUCATION2,
     rate: '55+',
+    bg: '#fff0ee',
   },
 ];
 
@@ -40,6 +49,7 @@ const otherSurvey = [
     numberSurvey: 'x1',
     contentSurvey: 'Working group',
     costSurvey: '$5.00',
+    data: questions,
   },
   {
     id: 7,
@@ -47,13 +57,15 @@ const otherSurvey = [
     numberSurvey: 'x2',
     contentSurvey: 'Social media',
     costSurvey: '$10.20',
+    data: socialMedia,
   },
   {
     id: 8,
     ImgBackground: IMAGE.IMG8,
     numberSurvey: 'x3',
-    contentSurvey: 'Information',
+    contentSurvey: 'Personal',
     costSurvey: '$35.00',
+    data: personal,
   },
 ];
 

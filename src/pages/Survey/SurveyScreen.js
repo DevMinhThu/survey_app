@@ -8,44 +8,38 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-import {questions, socialMedia} from '../../assets/Data/DataConfig';
 import {WebView} from 'react-native-webview';
 
 const windowWidth = Dimensions.get('window').width;
-// const windowHeight = Dimensions.get('window').height;
 
-const Survey = ({navigation}) => {
+const Survey = ({route, navigation}) => {
+  const {data} = route.params;
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [webViewHeight, setWebViewHeight] = useState(60);
-  // const [showAnswer, setShowAnswer] = useState(false);
-  // const [score, setScore] = useState(0);
 
   const handleAnswerButtonClick = () => {
-    // Update score for App
-    // if (isCorrect === true) {
-    //   setScore(score + 1);
-    // }
-
     // Move on to a new question
     const nextQuestion = currentQuestion + 1;
 
     // Processing the number of questions
-    if (nextQuestion < questions.length) {
+    if (nextQuestion < data.length) {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
     }
   };
-  console.log(questions[currentQuestion].questionText);
+  console.log(data[currentQuestion].questionText);
 
   // handler show answer
   const handleShowAnswer = () => {
-    if (questions[currentQuestion].questionType === false) {
-      return questions[currentQuestion].answerOptions.map((answerOptions) => (
+    if (data[currentQuestion].questionType === false) {
+      return data[currentQuestion].answerOptions.map((answerOptions, index) => (
         <TouchableOpacity
+          key={index}
           style={styles.buttonAns}
-          onPress={() => handleAnswerButtonClick(answerOptions.isCorrect)}>
+          onPress={() => handleAnswerButtonClick()}>
           <Text style={styles.textAnswer}>{answerOptions.answerText}</Text>
         </TouchableOpacity>
       ));
@@ -71,6 +65,7 @@ const Survey = ({navigation}) => {
   const runFirst = `
       document.body.style.backgroundColor = '#fff';
       document.body.style.fontSize = 28;
+      document.body.style.padding = 28;
       window.ReactNativeWebView.postMessage(document.body.scrollHeight)
     `;
 
@@ -78,7 +73,7 @@ const Survey = ({navigation}) => {
     <ScrollView style={styles.container}>
       <View style={styles.questionCount}>
         <Text style={styles.textQuestion}>
-          {currentQuestion + 1}/{questions.length}
+          {currentQuestion + 1}/{data.length}
         </Text>
       </View>
       <View style={styles.Survey}>
@@ -101,7 +96,7 @@ const Survey = ({navigation}) => {
                 <WebView
                   originWhitelist={['*']}
                   source={{
-                    html: questions[currentQuestion].questionText,
+                    html: data[currentQuestion].questionText,
                   }}
                   injectedJavaScript={runFirst}
                   // onMessage={onWebViewMessage}
@@ -206,7 +201,7 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
     fontWeight: '500',
-    color: '#007acc',
+    color: '#3d475a',
   },
 
   questionCount: {

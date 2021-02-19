@@ -34,21 +34,27 @@ const styles = StyleSheet.create({
 
   recommendedStyle: {
     marginTop: 24,
-    marginHorizontal: 8,
   },
 
   ImgProduct: {
     width: width - 86 * 3,
-    height: height - 290 * 2,
+    alignSelf: 'center',
+    height: 160,
+  },
+
+  styleButtonProduct: {
     marginRight: 20,
+    borderRadius: 10,
+    padding: 10,
   },
 
   nameSurvey: {
     color: 'black',
-    fontSize: 18,
-    padding: 15,
+    fontSize: 16,
     zIndex: 20,
-    fontWeight: '600',
+    fontWeight: 'bold',
+    paddingHorizontal: 15,
+    marginVertical: 5,
   },
 
   titleSurvey: {flex: 5},
@@ -58,6 +64,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
+    marginVertical: 5,
+    marginHorizontal: 5,
+    marginTop: 10,
   },
 
   rate: {
