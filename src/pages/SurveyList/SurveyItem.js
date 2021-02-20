@@ -3,6 +3,8 @@ import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 
 const SurveyItem = (props) => {
+  // const {data} = route.params;
+
   return (
     <TouchableOpacity
       style={[styles.containerButton, {backgroundColor: props.bg}]}

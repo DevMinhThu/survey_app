@@ -1,9 +1,11 @@
 import * as React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // screen
 import WelcomeScreen from '../pages/Welcome/WelcomeScreen';
@@ -89,6 +91,67 @@ function HomeStack() {
   );
 }
 
+//Handle TabNavigator
+const Tab = createBottomTabNavigator();
+
+function TabNavigator() {
+  return (
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size}) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'person' : 'person-outline';
+          } else {
+            iconName = focused ? 'reader' : 'reader-outline';
+          }
+
+          // You can return any component that you like here!
+          return <Icon name={iconName} color={color} size={size} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: '#1c2732',
+        inactiveTintColor: 'gray',
+        showLabel: false,
+        keyboardHidesTabBar: true,
+        style: {
+          backgroundColor: '#f6f6f4',
+        },
+        adaptive: 'true',
+      }}>
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen
+        name="SurveyList"
+        component={SurveyList}
+        options={{
+          tabBarBadge: 3,
+          tabBarBadgeStyle: {
+            backgroundColor: '#ff6666',
+            color: '#fff',
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarBadge: 1,
+          tabBarBadgeStyle: {
+            backgroundColor: '#ff6666',
+            color: '#fff',
+            fontWeight: 'bold',
+          },
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 // Drawer
 const Drawer = createDrawerNavigator();
 
@@ -96,10 +159,10 @@ const Drawer = createDrawerNavigator();
 function DrawerNavigator({navigation}) {
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
+      initialRouteName="MenuTab"
       drawerStyle={styles.drawerStyle}
       drawerContent={() => <CustomDrawerContent navigation={navigation} />}>
-      <Drawer.Screen name="Home" component={HomeStack} />
+      <Drawer.Screen name="MenuTab" component={TabNavigator} />
       <Drawer.Screen name="SurveyScreen" component={SurveyScreen} />
     </Drawer.Navigator>
   );

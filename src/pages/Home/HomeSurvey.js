@@ -43,7 +43,7 @@ export default function home({navigation}) {
       <TouchableOpacity
         style={[styles.styleButtonProduct, {backgroundColor: item.bg}]}
         onPress={() => {
-          navigation.navigate(item.name);
+          navigation.navigate('SurveyScreen', {data: item.data});
         }}>
         <View>
           <View style={styles.titleSurvey}>

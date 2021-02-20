@@ -13,6 +13,7 @@ import {WebView} from 'react-native-webview';
 const windowWidth = Dimensions.get('window').width;
 
 const Survey = ({route, navigation}) => {
+  // Passing parameters to routes
   const {data} = route.params;
 
   const [currentQuestion, setCurrentQuestion] = useState(0);

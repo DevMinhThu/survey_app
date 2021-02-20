@@ -1,5 +1,12 @@
 import {IMAGE} from '../images/Images';
-import {questions, socialMedia, personal} from '../../assets/Data/DataConfig';
+import {
+  questions,
+  socialMedia,
+  personal,
+  disease,
+  workHome,
+  lifeQuality,
+} from '../../assets/Data/DataConfig';
 
 const recommended = [
   {
@@ -8,7 +15,7 @@ const recommended = [
     ImgBackground: IMAGE.VIRUS,
     rate: '99+',
     bg: '#e0e0eb',
-    name: 'Profile',
+    data: disease,
   },
   {
     id: 2,
@@ -16,7 +23,7 @@ const recommended = [
     ImgBackground: IMAGE.WORK_HOME,
     rate: '100+',
     bg: '#ffe6cc',
-    name: 'Settings',
+    data: workHome,
   },
   {
     id: 3,
@@ -24,6 +31,7 @@ const recommended = [
     ImgBackground: IMAGE.LIFE,
     rate: '66+',
     bg: '#fdddf3',
+    data: lifeQuality,
   },
   {
     id: 4,
@@ -31,6 +39,7 @@ const recommended = [
     ImgBackground: IMAGE.MEDIA,
     rate: '80+',
     bg: '#85e0e0',
+    data: socialMedia,
   },
   {
     id: 5,
@@ -38,6 +47,7 @@ const recommended = [
     ImgBackground: IMAGE.EDUCATION2,
     rate: '55+',
     bg: '#fff0ee',
+    data: questions,
   },
 ];
 

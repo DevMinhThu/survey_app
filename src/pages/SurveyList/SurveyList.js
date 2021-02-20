@@ -21,11 +21,6 @@ const SurveyList = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      {/* title */}
-      <Image
-        source={require('../../assets/images/surveyIcon.png')}
-        style={styles.iconSurvey}
-      />
       <Text style={styles.title}>Survey List</Text>
       <Text style={styles.subTitle}>General list of surveys</Text>
 
@@ -33,7 +28,7 @@ const SurveyList = ({navigation}) => {
       <Modalize
         handleStyle={styles.styleHandle}
         modalStyle={styles.styleModal}
-        alwaysOpen={500}
+        alwaysOpen={460}
         scrollViewProps={{showsVerticalScrollIndicator: false}}>
         <View style={styles.containerItemList}>
           <SurveyItem
@@ -66,6 +61,9 @@ const SurveyList = ({navigation}) => {
             bg="#99ddff"
             subTitle="T.3 lúc 13:28"
             percent={75}
+            // onPress={(data) => {
+            //   navigation.navigate('SurveyScreen', {data: data});
+            // }}
           />
           <SurveyItem
             img={IMAGE.LIFE}
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
     width: 200,
     alignSelf: 'center',
     textAlign: 'center',
-    marginTop: 3,
+    marginTop: 55,
   },
 
   subTitle: {
@@ -151,12 +149,5 @@ const styles = StyleSheet.create({
   styleModal: {
     borderTopLeftRadius: 60,
     borderTopRightRadius: 60,
-  },
-
-  iconSurvey: {
-    width: 50,
-    height: 50,
-    marginTop: 35,
-    alignSelf: 'center',
   },
 });

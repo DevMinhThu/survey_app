@@ -1,3 +1,4 @@
+// work group
 const questions = [
   {
     questionText:
@@ -162,5 +163,157 @@ const personal = [
   },
 ];
 
+// disease data
+const disease = [
+  {
+    questionText: '<h1>This is the question A?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Answer 1',
+      },
+      {
+        answerText: 'Answer 2',
+      },
+      {
+        answerText: 'Answer 3',
+      },
+    ],
+  },
+  {
+    questionText: '<h1>This is the question B?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Answer 1',
+      },
+      {
+        answerText: 'Answer 2',
+      },
+    ],
+  },
+  {
+    questionText: '<h1>This is the question C?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Answer A',
+      },
+      {
+        answerText: 'Answer B',
+      },
+      {
+        answerText: 'Answer C',
+      },
+    ],
+  },
+];
+
+// workHome data
+const workHome = [
+  {
+    questionText:
+      '<h1>Do you like working from home? (Bạn có thích làm việc tại nhà không?)</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Yes (có)',
+      },
+      {
+        answerText: 'No (không)',
+      },
+    ],
+  },
+  {
+    questionText:
+      '<h1>Why do you work from home? (Tại sao bạn phải làm việc tại nhà?)</h1>',
+    questionType: true,
+  },
+  {
+    questionText:
+      '<h1>What factors are distracting at home? (Những yếu tố nào gây mất tập trung ở nhà)</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Noise from neighbors (Tiếng ồn từ hàng xóm)',
+      },
+      {
+        answerText: 'Take care of your children (Chăm sóc con cái)',
+      },
+      {
+        answerText: 'Many other things (Nhiều thứ khác)',
+      },
+    ],
+  },
+  {
+    questionText:
+      '<h1>If you could choose a workplace, where would you choose to work?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'Work at home (Làm việc tại nhà)',
+      },
+      {
+        answerText: 'Work at company (Làm việc tại công ty)',
+      },
+      {answerText: 'Working at the cafe (Làm việc tại quán cafe)'},
+      {
+        answerText: 'Any where (Bất cứ nơi nào)',
+      },
+    ],
+  },
+];
+
+// lifeQuality data
+const lifeQuality = [
+  {
+    questionText: '<h1>Life Quality?</h1>',
+    questionType: true,
+  },
+  {
+    questionText: '<h1>Question A?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: '1',
+      },
+      {
+        answerText: '2',
+      },
+    ],
+  },
+  {
+    questionText: '<h1>Question B?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'A',
+      },
+      {
+        answerText: 'B',
+      },
+      {
+        answerText: 'C',
+      },
+    ],
+  },
+  {
+    questionText: '<h1>Question C?</h1>',
+    questionType: false,
+    answerOptions: [
+      {
+        answerText: 'D',
+      },
+      {
+        answerText: 'E',
+      },
+      {answerText: 'F'},
+      {
+        answerText: 'Others (Khác)',
+      },
+    ],
+  },
+];
+
 // module.exports = questions;
-export {questions, socialMedia, personal};
+export {questions, socialMedia, personal, disease, workHome, lifeQuality};
