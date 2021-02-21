@@ -15,6 +15,7 @@ export class CustomHeader extends Component {
               <Feather name="menu" size={28} style={styles.styleIcon} />
             </TouchableOpacity>
           </View>
+
           <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
             <Feather
               name="bell"

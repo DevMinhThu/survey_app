@@ -6,6 +6,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {Root} from 'popup-ui';
 
 // screen
 import WelcomeScreen from '../pages/Welcome/WelcomeScreen';
@@ -158,13 +159,15 @@ const Drawer = createDrawerNavigator();
 //Handle Drawer
 function DrawerNavigator({navigation}) {
   return (
-    <Drawer.Navigator
-      initialRouteName="MenuTab"
-      drawerStyle={styles.drawerStyle}
-      drawerContent={() => <CustomDrawerContent navigation={navigation} />}>
-      <Drawer.Screen name="MenuTab" component={TabNavigator} />
-      <Drawer.Screen name="SurveyScreen" component={SurveyScreen} />
-    </Drawer.Navigator>
+    <Root>
+      <Drawer.Navigator
+        initialRouteName="MenuTab"
+        drawerStyle={styles.drawerStyle}
+        drawerContent={() => <CustomDrawerContent navigation={navigation} />}>
+        <Drawer.Screen name="MenuTab" component={TabNavigator} />
+        <Drawer.Screen name="SurveyScreen" component={SurveyScreen} />
+      </Drawer.Navigator>
+    </Root>
   );
 }
 

@@ -9,6 +9,7 @@ import {
   Dimensions,
 } from 'react-native';
 import {WebView} from 'react-native-webview';
+import {Root, Popup} from 'popup-ui';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -53,6 +54,7 @@ const Survey = ({route, navigation}) => {
               placeholder={'Enter the Answer ...'}
             />
           </View>
+
           <TouchableOpacity
             style={styles.buttonNext}
             onPress={() => handleAnswerButtonClick()}>
@@ -71,45 +73,57 @@ const Survey = ({route, navigation}) => {
     `;
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.questionCount}>
-        <Text style={styles.textQuestion}>
-          {currentQuestion + 1}/{data.length}
-        </Text>
-      </View>
-      <View style={styles.Survey}>
-        {showScore ? (
-          <View style={styles.scoreSection}>
-            <Text style={styles.textEnd}>
-              Thank you for completing the survey!
-            </Text>
-            <TouchableOpacity
-              style={styles.buttonNext}
-              onPress={() => navigation.navigate('Home')}>
-              <Text style={styles.textStyle}>Done</Text>
-            </TouchableOpacity>
-          </View>
-        ) : (
-          <View>
-            <View style={styles.questionSection}>
-              <View style={styles.questionText}>
-                {/* text -> webview */}
-                <WebView
-                  originWhitelist={['*']}
-                  source={{
-                    html: data[currentQuestion].questionText,
-                  }}
-                  injectedJavaScript={runFirst}
-                  // onMessage={onWebViewMessage}
-                  style={{height: webViewHeight}}
-                />
-              </View>
+    <Root>
+      <ScrollView style={styles.container}>
+        <View style={styles.questionCount}>
+          <Text style={styles.textQuestion}>
+            {currentQuestion + 1}/{data.length}
+          </Text>
+        </View>
+
+        <View style={styles.Survey}>
+          {showScore ? (
+            <View style={styles.scoreSection}>
+              <Text style={styles.textEnd}>
+                Thank you for completing the survey!
+              </Text>
+              <TouchableOpacity
+                style={styles.buttonNext}
+                onPress={() =>
+                  Popup.show({
+                    type: 'Success',
+                    title: 'Survey complete',
+                    button: true,
+                    textBody: 'Congrats! Your survey successfully done',
+                    buttonText: 'Exit',
+                    callback: () => Popup.hide(navigation.navigate('Home')),
+                  })
+                }>
+                <Text style={styles.textStyle}>Done</Text>
+              </TouchableOpacity>
             </View>
-            <View style={styles.answerSection}>{handleShowAnswer()}</View>
-          </View>
-        )}
-      </View>
-    </ScrollView>
+          ) : (
+            <View>
+              <View style={styles.questionSection}>
+                <View style={styles.questionText}>
+                  {/* text -> webview */}
+                  <WebView
+                    originWhitelist={['*']}
+                    source={{
+                      html: data[currentQuestion].questionText,
+                    }}
+                    injectedJavaScript={runFirst}
+                    // onMessage={onWebViewMessage}
+                    style={{height: webViewHeight}}
+                  />
+                </View>
+              </View>
+              <View style={styles.answerSection}>{handleShowAnswer()}</View>
+            </View>
+          )}
+        </View>
+      </ScrollView>
+    </Root>
   );
 };
 

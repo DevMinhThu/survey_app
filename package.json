@@ -17,6 +17,7 @@
     "@react-navigation/native": "^5.7.6",
     "@react-navigation/stack": "^5.9.3",
     "firebase": "^7.24.0",
+    "popup-ui": "^1.2.2",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-app-intro-slider": "^4.0.4",
