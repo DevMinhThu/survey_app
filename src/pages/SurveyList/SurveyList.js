@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {Modalize} from 'react-native-modalize';
 import {IMAGE} from '../../assets/images/Images';
 import SurveyItem from './SurveyItem';
+import {recommended, otherSurvey} from '../../assets/Data/DataHome';
 
 const SurveyList = ({navigation}) => {
   return (
@@ -53,7 +54,9 @@ const SurveyList = ({navigation}) => {
             bg="#fdddf3"
             subTitle="8 giờ trước"
             percent={25}
-            onPress={() => navigation.navigate('SurveyScreen')}
+            // onPress={(data) =>
+            //   navigation.navigate('SurveyScreen', {data: data})
+            // }
           />
           <SurveyItem
             img={IMAGE.MEDIA}

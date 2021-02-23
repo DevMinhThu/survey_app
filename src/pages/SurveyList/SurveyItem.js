@@ -1,8 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
+import {recommended, otherSurvey} from '../../assets/Data/DataHome';
 
-const SurveyItem = (props) => {
+const SurveyItem = (props, {route}) => {
   // const {data} = route.params;
 
   return (

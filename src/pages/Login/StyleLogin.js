@@ -14,6 +14,13 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
 
+  titleWelcomeBack: {
+    fontSize: 25,
+    marginTop: 20,
+    fontWeight: 'bold',
+    fontFamily: 'HelveticaNeueBold',
+  },
+
   containerButton: {
     alignItems: 'center',
     justifyContent: 'center',

@@ -104,8 +104,8 @@ function TabNavigator() {
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Profile') {
-            iconName = focused ? 'person' : 'person-outline';
+          } else if (route.name === 'Settings') {
+            iconName = focused ? 'settings' : 'settings-outline';
           } else {
             iconName = focused ? 'reader' : 'reader-outline';
           }
@@ -138,8 +138,8 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="Settings"
+        component={SetupScreen}
         options={{
           tabBarBadge: 1,
           tabBarBadgeStyle: {
